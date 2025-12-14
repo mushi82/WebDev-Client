@@ -1,10 +1,10 @@
 .App {
-  background-color: beige;
+  background-color: rgb(255, 137, 188);
   min-height: 100vh;
   text-align: center;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #cdaaef;
 }
 
