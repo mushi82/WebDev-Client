@@ -16,6 +16,8 @@ class EditStudentContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: null,
+      campusId: "",
       firstname: "",
       lastname: "",
       campusId: null,

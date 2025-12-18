@@ -27,9 +27,7 @@ class EditCampusContainer extends Component {
   // Get the campus data
   componentDidMount() {
     this.props.fetchCampus(this.props.match.params.id);
-    if (campusId) {
-      this.props.fetchCampus(campusId);
-    }
+
   }
   componentWillUnmount() {
     this.setState({ redirect: false, redirectId: null });

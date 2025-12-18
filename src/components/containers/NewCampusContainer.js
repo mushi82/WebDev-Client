@@ -38,20 +38,31 @@ class NewCampusContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
+    // Validation - check required fields
+    if (!this.state.name || this.state.name.trim() === '') {
+      alert("Campus name is required!");
+      return;
+    }
+
+    if (!this.state.address || this.state.address.trim() === '') {
+      alert("Campus address is required!");
+      return;
+    }
+
     let campus = {
         name: this.state.name,
-        address: this.state.address,
-        description: this.state.description,
+        address: this.state.description,
         imageURL: this.state.imageURL,
     };
     
     // Add campus in back-end database
     let newCampus = await this.props.addCampus(campus);
-    //error handling
+    
+    // Error handling
     if (!newCampus) {
         alert("Invalid Campus Entry. Please Try Again.");
         return;
-        }
+    }
 
     // Update state, and trigger redirect to show the new campus
     this.setState({
@@ -59,8 +70,8 @@ class NewCampusContainer extends Component {
       address: "", 
       description: "", 
       imageURL: "", 
-      redirect: false, 
-      redirectId: null
+      redirect: true,           // ← Changed to true
+      redirectId: newCampus.id  // ← Set to the new campus's ID
     });
   }
 
