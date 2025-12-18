@@ -41,7 +41,7 @@ const NewStudentView = (props) => {
   // Render a New Student view with an input form
   return (
     <div>
-      <h1>New Student</h1>
+      <h1>New Student Form</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
@@ -62,7 +62,7 @@ const NewStudentView = (props) => {
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Email Address: </label>
             <input type="email" name="email" placeholder="student@example.com" onChange={(e) => handleChange(e)} required/>
             <br/>
             <br/>
@@ -77,8 +77,8 @@ const NewStudentView = (props) => {
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
-            <input type="number" name="campusId" onChange={(e) => handleChange(e)} optional/>
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus ID: </label>
+            <input type="number" name="campusId" onChange={(e) => handleChange(e)}/>
             <br/>
             <br/>
 

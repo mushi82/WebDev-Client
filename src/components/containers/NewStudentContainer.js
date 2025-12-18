@@ -20,9 +20,12 @@ class NewStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "", 
+      email: "",
       campusId: null, 
       redirect: false, 
-      redirectId: null
+      redirectId: null,
+      imageUrl: '',
+      gpa: '',
     };
   }
 
@@ -35,24 +38,52 @@ class NewStudentContainer extends Component {
 
   // Take action after user click the submit button
   handleSubmit = async event => {
-    event.preventDefault();  // Prevent browser reload/refresh after submit.
+    event.preventDefault();  
+    if (!this.state.firstname || this.state.firstname.trim() === '') {
+      alert("Invalid First Name");
+      return;
+    }
+    if (!this.state.lastname || this.state.lastname.trim() === '') {
+      alert("Invalid Last Name");
+      return;
+    }
+    if (!this.state.email || this.state.email.trim() === '') {
+      alert("Invalid Email");
+      return;
+    }
+    if (this.state.gpa && (isNaN(this.state.gpa) || this.state.gpa < 0 || this.state.gpa > 4)) {
+      alert("Please only choose a number between 0 and 4");
+      return;
+    }
 
     let student = {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
-        campusId: this.state.campusId
+        email: this.state.email,
+        campusId: this.state.campusId || null,
+        imageUrl: this.state.imageUrl,
+        gpa: this.state.gpa || null,
     };
     
     // Add new student in back-end database
     let newStudent = await this.props.addStudent(student);
 
+    // Error handling
+    if (!newStudent) {
+      alert("Failed to add student. Try Again!");
+      return;
+    }
+
     // Update state, and trigger redirect to show the new student
     this.setState({
       firstname: "", 
       lastname: "", 
+      email: "",
       campusId: null, 
       redirect: true, 
-      redirectId: newStudent.id
+      redirectId: newStudent.id,
+      imageUrl: '',
+      gpa: '',
     });
   }
 

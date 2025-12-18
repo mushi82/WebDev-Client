@@ -20,7 +20,7 @@ import AllStudentsView from '../views/AllStudentsView';
 class AllStudentsContainer extends Component {
   // Get all students data from back-end database
   componentDidMount() {
-    this.props.fetchAllStudents();
+  this.props.fetchAllStudents();
   }
 
   // Render All Students view by passing all students data as props to the corresponding View component

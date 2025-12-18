@@ -15,7 +15,6 @@ const allCampuses = (state = [], action) => {  // Empty array as default Initial
     case at.DELETE_CAMPUS:
           return state.filter(campus => campus.id!==action.payload);
     default:
-      // If the Reducer doesn't recognize the Action Type, returns the previous (current) State unchanged.
       return state;
   }
 };
