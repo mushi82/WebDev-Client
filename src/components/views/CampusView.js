@@ -19,7 +19,7 @@ const CampusView = (props) => {
       <div style={{ 
         backgroundColor: '#f5f5f5', 
         padding: '20px', 
-        borderRadius: '8px',
+        borderRadius: '25px',
         marginBottom: '20px'
       }}>
         <h1 style={{ margin: '0 0 15px 0' }}>{campus.name}</h1>
@@ -35,7 +35,7 @@ const CampusView = (props) => {
               width: "200px", 
               height: "150px", 
               objectFit: "cover",
-              borderRadius: '5px',
+              borderRadius: '10px',
               marginTop: '10px'
             }}
           />
@@ -103,8 +103,8 @@ const CampusView = (props) => {
                 padding: '15px',
                 marginBottom: '10px',
                 backgroundColor: '#fafafa',
-                borderRadius: '5px',
-                border: '1px solid #ddd'
+                border: '1px solid #ddd',
+        borderRadius: '25px',
               }}>
               <Link to={`/student/${student.id}`}>
                 <h3 style={{ margin: '0 0 10px 0' }}>
@@ -113,12 +113,17 @@ const CampusView = (props) => {
               </Link>
               <button 
                 onClick={() => props.deleteStudent(student.id)}
-                style={{
-                  padding: '6px 12px',
-                  fontSize: '14px',
-                  cursor: 'pointer'
-                }}>
-                Unenroll Student
+              style={{
+                padding: '10px 20px',
+                fontSize: '15px',
+                cursor: 'pointer',
+                backgroundColor: '#000000ff',
+                color: 'white',
+                fontFamily: 'Tahoma',
+            borderRadius: '50px',
+                border: 'none',
+              }}>
+                Unenroll
               </button>
             </div>
           ))}
@@ -129,12 +134,15 @@ const CampusView = (props) => {
         <Link to="/newstudent">
           <button style={{ 
             padding: '10px 20px',
+                fontFamily: 'Tahoma',
             fontSize: '18px',
             cursor: 'pointer',
             backgroundColor: '#000000ff',
             color: 'white',
             border: 'none',
-            borderRadius: '4px'
+            borderRadius: '50px',
+            fontStyle: 'bold',
+            fontWeight: '10px'
           }}>
             Add New Student
           </button>

@@ -145,11 +145,7 @@ export const fetchStudentThunk = id => async dispatch => {  // The THUNK
 // THUNK CREATOR:
 export const unenrollStudentThunk = studentId => async (dispatch, getState) => {  // The THUNK
   try {
-    const student = getState().student;
-    const matchingStudent = student.find(stud => stud.id === studentId);
-    if (matchingStudent === undefined) {
-      throw new Error("Student does not exist");
-    }
+
     let res = await axios.put(`/api/students/${studentId}`, { campusId: null });  
 
     dispatch(ac.editStudent(res.data));

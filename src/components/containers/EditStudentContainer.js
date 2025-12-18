@@ -1,8 +1,5 @@
 /*==================================================
 EditStudentContainer.js
-
-The Container component is responsible for stateful logic and data fetching, and
-passes data (if any) as props to the corresponding View component.
 ================================================== */
 import Header from './Header';
 import { Component } from 'react';
@@ -29,12 +26,12 @@ class EditStudentContainer extends Component {
     };
   }
 
-  // Get the student data from back-end database
+  // Get the student data
   componentDidMount() {
     this.props.fetchStudent(this.props.match.params.id);
   }
 
-  // Update state with student data once it's loaded
+  // Update state with student data
   componentDidUpdate(prevProps) {
     if (prevProps.student !== this.props.student && this.props.student) {
       this.setState({
@@ -47,15 +44,13 @@ class EditStudentContainer extends Component {
       });
     }
   }
-
-  // Capture input data when it is entered
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
-  // Take action after user clicks the submit button
+  // what to do after submit is clicked
   handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -69,24 +64,21 @@ class EditStudentContainer extends Component {
       gpa: this.state.gpa
     };
 
-    // Edit student in back-end database
+    // Edit student information in the backend as well
     await this.props.editStudent(student);
-
-    // Update state, and trigger redirect to show the updated student
     this.setState({
       redirect: true,
       redirectId: student.id
     });
   };
 
-  // Unmount when the component is being removed from the DOM
+
   componentWillUnmount() {
     this.setState({ redirect: false, redirectId: null });
   }
 
-  // Render edit student input form
+  // Rendering the edit student form
   render() {
-    // Redirect to student page after submit
     if (this.state.redirect) {
       return <Redirect to={`/student/${this.state.redirectId}`} />;
     }
@@ -104,14 +96,14 @@ class EditStudentContainer extends Component {
   }
 }
 
-// Map state to props
+
 const mapState = (state) => {
   return {
     student: state.student
   };
 };
 
-// Map dispatch to props
+// Mapping dispatch
 const mapDispatch = (dispatch) => {
   return {
     fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
