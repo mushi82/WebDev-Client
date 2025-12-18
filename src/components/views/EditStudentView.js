@@ -9,8 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
   formContainer: {
     width: '500px',
-    backgroundColor: '#f0f0f5',
-    borderRadius: '5px',
+    backgroundColor: '#000000ff',
+    borderRadius: '25px',
     margin: 'auto',
   },
   title: {
@@ -23,10 +23,10 @@ const useStyles = makeStyles(() => ({
     shadows: ['none'],
   },
   formTitle: {
-    backgroundColor: '#c5c8d6',
+    backgroundColor: '#000000ff',
     marginBottom: '15px',
     textAlign: 'center',
-    borderRadius: '5px 5px 0px 0px',
+    borderRadius: '25px 25px 0px 0px',
     padding: '3px'
   },
 }));
@@ -47,13 +47,13 @@ const EditStudentView = (props) => {
                 fontWeight: "bold", 
                 fontFamily: "Courier, sans-serif", 
                 fontSize: "20px", 
-                color: "#11153e" }}>
+                color: "#ffffffff" }}>
               Edit Student Information
             </Typography>
           </div>
           <form style={{ textAlign: 'center' }} onSubmit={(e) => handleSubmit(e)}>
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>First Name: </label>
+            <label style={{ color: '#ffffffff', fontWeight: 'bold' }}>First Name: </label>
             <input 
               type="text" 
               name="firstname" 
@@ -64,7 +64,7 @@ const EditStudentView = (props) => {
             <br />
             <br />
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Last Name: </label>
+            <label style={{ color: '#ffffffff', fontWeight: 'bold' }}>Last Name: </label>
             <input 
               type="text" 
               name="lastname" 
@@ -75,7 +75,7 @@ const EditStudentView = (props) => {
             <br />
             <br />
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Email: </label>
+            <label style={{ color: '#ffffffff', fontWeight: 'bold' }}>Email: </label>
             <input 
               type="email" 
               name="email" 
@@ -87,7 +87,7 @@ const EditStudentView = (props) => {
             <br />
             <br />
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>GPA: </label>
+            <label style={{ color: '#ffffffff', fontWeight: 'bold' }}>GPA: </label>
             <input 
               type="number" 
               name="gpa" 
@@ -101,7 +101,7 @@ const EditStudentView = (props) => {
             <br />
             <br />
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Image URL: </label>
+            <label style={{ color: '#ffffffff', fontWeight: 'bold' }}>Image URL: </label>
             <input 
               type="text" 
               name="imageURL" 
@@ -112,7 +112,7 @@ const EditStudentView = (props) => {
             <br />
             <br />
 
-            <label style={{ color: '#11153e', fontWeight: 'bold' }}>Campus ID: </label>
+            <label style={{ color: '#ffffffff', fontWeight: 'bold' }}>Campus ID: </label>
             <input 
               type="number" 
               name="campusId" 
@@ -123,7 +123,7 @@ const EditStudentView = (props) => {
             <br />
             <br />
 
-            <Button variant="contained" color="primary" type="submit">
+            <Button variant="contained" color="white" type="submit" borderRadius='50px'>
               Submit
             </Button>
             <br />

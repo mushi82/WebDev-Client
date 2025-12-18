@@ -52,25 +52,25 @@ const AllCampusesView = (props) => {
           <hr/>
         </div>
       ))}
-      <br/>
-      <Link to="/newcampus">
-        <button 
-          style={{ 
-            padding: '10px 20px',
-            fontSize: '16px',
-            cursor: 'pointer',
-            backgroundColor: '#000000ff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px'
-          }}>
-          Add New Campus
-        </button>
-      </Link>
-      <br/><br/>
-    </div>
-  );
-};
+            <br/>
+            <Link to="/newcampus">
+              <button 
+                style={{ 
+                  padding: '10px 20px',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                  backgroundColor: '#000000ff',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '50px'
+                }}>
+                Add New Campus
+              </button>
+            </Link>
+            <br/><br/>
+          </div>
+        );
+      };
 
 // Validate data type of the props passed to component.
 AllCampusesView.propTypes = {

@@ -17,7 +17,7 @@ const StudentView = (props) => {
       <div style={{ 
         backgroundColor: '#f5f5f5', 
         padding: '20px', 
-        borderRadius: '8px',
+        borderRadius: '25px',
         marginBottom: '20px',
         textAlign: 'center',
       }}>
@@ -32,9 +32,9 @@ const StudentView = (props) => {
             style={{ 
               width: "200px", 
               height: "150px", 
-              objectFit: "cover",
-              borderRadius: '5px',
-              marginTop: '10px'
+          objectFit: "cover",
+          borderRadius: '5px',
+          marginTop: '10px'
             }}
           />
         )}
@@ -42,7 +42,7 @@ const StudentView = (props) => {
         <p><strong>Email:</strong> {student.email}</p>
         <p><strong>GPA:</strong> {student.gpa || "N/A"}</p>
         
-        {/* Campus Information */}
+
         {student.campus ? (
           <div>
             <p><strong>Campus:</strong></p>
@@ -59,7 +59,7 @@ const StudentView = (props) => {
         )}
       </div>
 
-      {/* Action Buttons */}
+
       <div style={{ 
         display: 'flex', 
         gap: '10px', 
@@ -70,11 +70,12 @@ const StudentView = (props) => {
           <button style={{
             padding: '10px 20px',
             fontSize: '16px',
+            fontWeight: '500',
             cursor: 'pointer',
             backgroundColor: 'black',
             color: 'white',
             border: 'none',
-            borderRadius: '5px',
+            borderRadius: '50px',
             fontFamily: 'Tahoma'
           }}>
             Edit Student
@@ -94,7 +95,8 @@ const StudentView = (props) => {
             backgroundColor: '#000000ff',
             color: 'white',
             border: 'none',
-            borderRadius: '5px',
+            fontWeight: '500',
+            borderRadius: '50px',
             fontFamily: 'Tahoma'
           }}>
           Delete Student

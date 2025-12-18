@@ -18,7 +18,9 @@ const HomePageView = () => {
         fontSize: '60px',
         fontWeight: 'bold',
         marginBottom: '50px',
-        color: '#000'
+        color: '#000',
+        font:'Tahoma',
+        fontWeight: '800px'
       }}>
         CMS Home Page
       </h1>
@@ -36,7 +38,7 @@ const HomePageView = () => {
         <div style={{
           backgroundColor: '#ffffffff',
           padding: '40px',
-          borderRadius: '15px',
+          borderRadius: '25px',
           width: '450px',
           textAlign: 'center',
 
@@ -66,7 +68,7 @@ const HomePageView = () => {
               maxWidth: '350px',
               height: '230px',
               objectFit: 'cover',
-              borderRadius: '10px',
+              borderRadius: '20px',
               marginBottom: '25px'
             }}
           />
@@ -78,9 +80,9 @@ const HomePageView = () => {
               padding: '12px 40px',
               fontSize: '16px',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '50px',
               cursor: 'pointer',
-              fontWeight: '500'
+              fontWeight: '600'
             }}>
               View All Campuses
             </button>
@@ -90,7 +92,7 @@ const HomePageView = () => {
         <div style={{
           backgroundColor: '#ffffffff',
           padding: '40px',
-          borderRadius: '15px',
+          borderRadius: '25px',
           width: '450px',
           textAlign: 'center',
         }}>
@@ -119,7 +121,7 @@ const HomePageView = () => {
               maxWidth: '350px',
               height: '230px',
               objectFit: 'cover',
-              borderRadius: '10px',
+              borderRadius: '20px',
               marginBottom: '25px'
             }}
           />
@@ -131,9 +133,9 @@ const HomePageView = () => {
               padding: '12px 40px',
               fontSize: '16px',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '50px',
               cursor: 'pointer',
-              fontWeight: '500'
+              fontWeight: '600'
             }}>
               View All Students
             </button>

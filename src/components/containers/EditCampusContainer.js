@@ -32,7 +32,7 @@ class EditCampusContainer extends Component {
   componentWillUnmount() {
     this.setState({ redirect: false, redirectId: null });
   }
-  // Update state with campus data once it's loaded
+  // Update information
   componentDidUpdate(prevProps) {
     if (prevProps.campus !== this.props.campus && this.props.campus) {
         const campusId = this.props.match.params.id;
@@ -57,13 +57,13 @@ class EditCampusContainer extends Component {
 
 
 
-  // Capture input data when it is entered
+  // take input
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
-  // Take action after user clicks the submit button
+  // what to do when submit is clicked
   handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -75,7 +75,7 @@ class EditCampusContainer extends Component {
       imageURL: this.state.imageURL
     };
 
-    // Edit campus in back-end database
+    // Edit campus
     let editedCampus = await this.props.editCampus(campus);
     this.setState({
       name: "",
